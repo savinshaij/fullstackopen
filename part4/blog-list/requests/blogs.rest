@@ -1,0 +1,13 @@
+### Get all blogs
+GET http://localhost:3003/api/blogs
+
+### Add a blog
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+  "title": "Go To Statement Considered Harmful",
+  "author": "Edsger W. Dijkstra",
+  "url": "https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf",
+  "likes": 5
+}
