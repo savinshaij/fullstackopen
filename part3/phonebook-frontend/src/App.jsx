@@ -60,9 +60,9 @@ const App = () => {
               setNotificationMessage(null)
             }, 5000)
           })
-          .catch(() => {
+          .catch(error => {
             setNotificationType('error')
-            setNotificationMessage(`Information of ${existingPerson.name} has already been removed from server`)
+            setNotificationMessage(error.response.data.error || `Information of ${existingPerson.name} has already been removed from server`)
             setTimeout(() => {
               setNotificationMessage(null)
             }, 5000)
@@ -89,9 +89,9 @@ const App = () => {
           setNotificationMessage(null)
         }, 5000)
       })
-      .catch(() => {
+      .catch(error => {
         setNotificationType('error')
-        setNotificationMessage(`Failed to add ${newPerson.name}`)
+        setNotificationMessage(error.response.data.error || `Failed to add ${newPerson.name}`)
         setTimeout(() => {
           setNotificationMessage(null)
         }, 5000)
